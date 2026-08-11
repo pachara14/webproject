@@ -95,58 +95,6 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
 
-7. รัน migration
-
-```bash
-php artisan migrate
-```
-
-8. สร้าง build assets
-
-```bash
-npm run build
-```
-
-## การรันโปรเจกต์
-
-### โหมดพัฒนา
-
-```bash
-php artisan serve
-```
-
-ถ้าต้องการรัน frontend แบบ watch:
-
-```bash
-npm run dev
-```
-
-### รันแบบรวม
-
-ใน `composer.json` มีสคริปต์สำหรับโหมดพัฒนาอยู่แล้ว:
-
-```bash
-composer run dev
-```
-
-คำสั่งนี้จะรัน:
-
-- Laravel server
-- queue listener
-- log viewer
-- Vite dev server
-
-## โครงสร้างข้อมูลที่เกี่ยวข้อง
-
-โปรเจกต์นี้อ้างอิงตาราง `project_schedule` สำหรับเก็บข้อมูลกำหนดการ เช่น:
-
-- `title`
-- `description`
-- `lecturer`
-- `note`
-- `start_date`
-- `end_date`
-- `color`
 
 ## หมายเหตุการใช้งาน
 
@@ -154,11 +102,6 @@ composer run dev
 - ถ้ายังไม่มีรูปโปรไฟล์จาก Google ระบบจะบันทึกเป็นข้อมูลจากบัญชีผู้ใช้
 - ข้อมูลปฏิทินถูกส่งออกในรูปแบบ JSON เพื่อเชื่อมกับ FullCalendar ได้ทันที
 
-## สคริปต์ที่มีในโปรเจกต์
-
-- `composer run dev` สำหรับโหมดพัฒนา
-- `composer run test` สำหรับรันชุดทดสอบ
-- `composer run setup` สำหรับติดตั้งและเตรียมโปรเจกต์แบบอัตโนมัติ
 
 ## การพัฒนาต่อ
 
