@@ -1,0 +1,661 @@
+:root {
+    --wine: #711f2c;
+    --wine2: #872632;
+    --gold: #d5a23b;
+    --cream: #f7f2ec;
+    --paper: #fffdfa;
+    --text: #473b38;
+    --muted: #9c8d87;
+    --line: #eaded6
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: "IBM Plex Sans Thai", Tahoma, sans-serif
+}
+
+.app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 268px 1fr
+}
+
+.sidebar {
+    position: fixed;
+    width: 268px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: var(--wine)
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 86px;
+    padding: 0 23px;
+    border-bottom: 1px solid #ffffff2c;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.brand b {
+    display: block;
+    font-size: 15px;
+}
+
+.brand small {
+    color: #eac76e;
+    font-size: 10px;
+}
+
+.project {
+    padding: 18px 21px;
+    border-bottom: 1px solid #ffffff2c
+}
+
+.project small {
+    color: #dfb55c;
+    letter-spacing: .1em
+}
+
+.project strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 15px
+}
+
+.project span {
+    display: block;
+    margin-top: 3px;
+    color: #dfc2c5;
+    font-size: 12px
+}
+
+.nav {
+    padding: 20px 12px
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 46px;
+    padding: 0 14px;
+    border-radius: 12px;
+    color: #f9ebec;
+    text-decoration: none;
+    font-size: 15px
+}
+
+.nav a:hover {
+    background: #ffffff14
+}
+
+.nav a.active {
+    color: var(--wine);
+    background: var(--gold);
+    font-weight: 700
+}
+
+.nav .ico {
+    width: 18px;
+    text-align: center;
+    font-size: 18px
+}
+
+.badge {
+    margin-left: auto;
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f6d973;
+    color: #6f202c;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.logout {
+    margin: auto 12px 18px
+}
+
+.logout button {
+    width: 100%;
+    height: 42px;
+    border: 1px solid #ffffff3b;
+    border-radius: 11px;
+    color: #f9ebec;
+    background: transparent;
+    font: 14px "IBM Plex Sans Thai", sans-serif;
+    cursor: pointer
+}
+
+.logout button:hover {
+    background: #ffffff17
+}
+
+.content {
+    grid-column: 2;
+    min-width: 0
+}
+
+.topbar {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line)
+}
+
+.crumb {
+    color: #ad9b94;
+    font-size: 12px
+}
+
+.crumb span {
+    color: #842936
+}
+
+.topbar h1 {
+    margin: 3px 0 0;
+    font-family: Prompt, sans-serif;
+    font-size: 21px
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 13px
+}
+
+.bell {
+    position: relative;
+    color: #7c6b64;
+    font-size: 21px
+}
+
+.bell::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 1px solid #fff
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #eddaa5;
+    color: #7b2a34;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user b {
+    display: block;
+    font-size: 14px
+}
+
+.user small {
+    display: block;
+    color: #a2938d;
+    font-size: 11px
+}
+
+.main {
+    max-width: 1500px;
+    margin: auto;
+    padding: 36px 8.5%
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 28px 32px;
+    background: var(--wine2);
+    border-radius: 16px;
+    color: white
+}
+
+.date {
+    margin: 0;
+    color: #eac15d;
+    font-size: 14px;
+    font-weight: 600
+}
+
+.hero h2 {
+    margin: 5px 0 4px;
+    font-family: Prompt, sans-serif;
+    font-size: 30px
+}
+
+.hero p {
+    margin: 0;
+    color: #ecd9db;
+    font-size: 14px
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 17px;
+    border: 1px solid #ffffff4a;
+    border-radius: 15px
+}
+
+.status i {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #efd16e;
+    color: #6f202c;
+    font-style: normal
+}
+
+.status small {
+    display: block;
+    color: #e0bfc3
+}
+
+.status b {
+    font-size: 14px
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 23px 0
+}
+
+.metric,
+.panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px #4d302008
+}
+
+.metric {
+    min-height: 138px;
+    padding: 20px;
+    position: relative
+}
+
+.metric .icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    font-size: 19px
+}
+
+.amber {
+    background: #faedcb;
+    color: #af7713
+}
+
+.green {
+    background: #e7f3eb;
+    color: #318254
+}
+
+.pink {
+    background: #f8e7e6;
+    color: #a8444a
+}
+
+.purple {
+    background: #eee9f5;
+    color: #715b90
+}
+
+.metric p {
+    margin: 0;
+    color: #91817b;
+    font-size: 14px
+}
+
+.metric h3 {
+    margin: 8px 0;
+    color: #443937;
+    font-family: Prompt, sans-serif;
+    font-size: 29px
+}
+
+.metric small {
+    color: #a99b95;
+    font-size: 12px
+}
+
+.lower {
+    display: grid;
+    grid-template-columns: 1.58fr 1fr;
+    gap: 23px
+}
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 20px;
+    border-bottom: 1px solid var(--line)
+}
+
+.panel-head h3 {
+    margin: 0;
+    font-family: Prompt, sans-serif;
+    font-size: 17px
+}
+
+.panel-head small {
+    display: block;
+    color: #a79993;
+    font-size: 12px
+}
+
+.panel-head a {
+    color: #8b2934;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none
+}
+
+.progress-list {
+    padding: 11px 20px 20px
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    gap: 12px;
+    align-items: start;
+    padding: 17px 0
+}
+
+.step {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: #9b6b15;
+    background: #faedcb;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.task b {
+    display: block;
+    font-size: 14px
+}
+
+.task p {
+    margin: 2px 0;
+    color: #a2938d;
+    font-size: 12px
+}
+
+.task time {
+    color: #a2938d;
+    font-size: 11px
+}
+
+.tag {
+    align-self: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #eaf5ed;
+    color: #378354;
+    font-size: 11px;
+    font-weight: 600
+}
+
+.tag.wait {
+    background: #fff3d9;
+    color: #a97616
+}
+
+.appointments {
+    padding: 4px 20px 20px
+}
+
+.appointment {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0
+}
+
+.cal {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 62px;
+    border: 1px solid #eccb83;
+    border-radius: 12px;
+    background: #fff6df;
+    color: #8c5f13;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.05
+}
+
+.cal b {
+    font-family: Prompt, sans-serif;
+    font-size: 20px
+}
+
+.appointment b {
+    display: block;
+    font-size: 14px
+}
+
+.appointment p,
+.appointment small {
+    display: block;
+    margin: 2px 0;
+    color: #9e9089;
+    font-size: 12px
+}
+
+.outline-btn {
+    display: block;
+    margin-top: 3px;
+    padding: 10px;
+    border: 1px dashed #e3c9c1;
+    border-radius: 12px;
+    color: #8c2935;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600
+}
+
+.notice {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-top: 23px;
+    padding: 17px 20px
+}
+
+.notice .icon {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: #faedcb;
+    color: #a87817
+}
+
+.notice b {
+    display: block;
+    font-size: 14px
+}
+
+.notice p {
+    margin: 2px 0 0;
+    color: #a2938d;
+    font-size: 12px
+}
+
+@media(max-width:1120px) {
+    .main {
+        padding: 28px 30px
+    }
+
+    .metrics {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:820px) {
+    .app {
+        grid-template-columns: 1fr
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto
+    }
+
+    .brand {
+        height: 70px
+    }
+
+    .project,
+    .nav,
+    .logout {
+        display: none
+    }
+
+    .content {
+        grid-column: 1
+    }
+
+    .topbar {
+        height: 72px;
+        padding: 0 20px
+    }
+
+    .main {
+        padding: 22px 16px
+    }
+
+    .hero {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px
+    }
+
+    .lower {
+        grid-template-columns: 1fr
+    }
+
+    .status {
+        display: none
+    }
+}
+
+@media(max-width:500px) {
+    .metrics {
+        grid-template-columns: 1fr
+    }
+
+    .hero h2 {
+        font-size: 25px
+    }
+
+    .user div:not(.avatar),
+    .bell {
+        display: none
+    }
+
+    .topbar h1 {
+        font-size: 18px
+    }
+}
+
+#calendar {
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.fc {
+    font-family: 'Prompt', sans-serif;
+}
+
+.fc-toolbar-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.fc-button {
+    background: #2563eb !important;
+    border: none !important;
+}
+
+.fc-event {
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+    padding: 2px;
+}
